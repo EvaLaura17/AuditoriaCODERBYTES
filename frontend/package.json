@@ -15,9 +15,13 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "react-icons": "^5.6.0",
 >>>>>>> origin/feature-comercial
+=======
+    "react-icons": "^5.6.0",
+>>>>>>> 374f9fecf0a3daa299f5404e27f100a3dfa26c1d
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.15.1",
     "xlsx": "^0.18.5"

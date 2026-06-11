@@ -1,5 +1,8 @@
 import apiClient from "./apiClient";
 
+// ======================
+// DISTRIBUIDORES
+// ======================
 export const getDistribuidores = () =>
   apiClient.get("/distribuidores/");
 
@@ -14,3 +17,10 @@ export const updateDistribuidor = (id, data) =>
 
 export const deleteDistribuidor = (id) =>
   apiClient.delete(`/distribuidores/${id}/`);
+
+
+// ======================
+// AGENTES
+// ======================
+export const getAgentes = () =>
+  apiClient.get("/distribuidores/agentes/");

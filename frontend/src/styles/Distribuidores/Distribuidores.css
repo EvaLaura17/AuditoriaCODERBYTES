@@ -1,0 +1,56 @@
+.pagina-distribuidores {
+  padding: 20px;
+  color: white;
+}
+
+.titulo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #67e8f9;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.grid-agentes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* CARD */
+.card-agente {
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 12px;
+  padding: 16px;
+  transition: 0.2s;
+}
+
+.card-agente:hover {
+  transform: translateY(-3px);
+  border-color: #22d3ee;
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+}
+
+/* TEXTO */
+.card-agente h3 {
+  color: #67e8f9;
+  margin-bottom: 10px;
+}
+
+.card-agente p {
+  font-size: 13px;
+  margin: 4px 0;
+  color: #e5e7eb;
+}
+
+/* ESTADO */
+.activo {
+  color: #22c55e;
+  font-weight: bold;
+}
+
+.inactivo {
+  color: #ef4444;
+  font-weight: bold;
+}

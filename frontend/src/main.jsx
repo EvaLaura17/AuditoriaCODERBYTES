@@ -9,6 +9,7 @@ import "./styles/Sidebar.css";
 import "./styles/Aduanas/Aduana.css";
 import "./styles/Comercial/Comercial.css";
 import "./styles/Comercial/TablasComercial.css";
+import "./styles/Distribuidores/Distribuidores.css";
 
 import App from "./App";
 

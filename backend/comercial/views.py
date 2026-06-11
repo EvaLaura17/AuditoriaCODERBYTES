@@ -1,36 +1,43 @@
 from rest_framework import viewsets
-from rest_framework.permissions import AllowAny # Cambiar por IsAuthenticated en producción
-from .serializers import VentaHistoricaReadSerializer, VentaHistoricaWriteSerializer
-from django.shortcuts import render
-from django.db.models import Sum, OuterRef, Subquery
-from geografico.models import PaisDestino
-from comercial.models import VentaHistorica
+from rest_framework.permissions import AllowAny
+from django.http import JsonResponse
+from django.db.models import Sum, Value, FloatField
+from django.db.models.functions import Coalesce
 
+from .serializers import VentaHistoricaReadSerializer, VentaHistoricaWriteSerializer
+from .models import VentaHistorica
+from geografico.models import PaisDestino
+
+# =========================
+# VIEWSET PRINCIPAL
+# =========================
 class VentaHistoricaViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
-    
+
     def get_queryset(self):
-        # select_related realiza un JOIN en la base de datos para traer los datos del
-        # producto y distribuidor en una sola consulta SQL de alta velocidad.
-        return VentaHistorica.objects.select_related('producto', 'distribuidor').order_by('-fecha_venta')
+        return VentaHistorica.objects.select_related(
+            'producto',
+            'distribuidor'
+        ).order_by('-fecha_venta')
 
     def get_serializer_class(self):
-        # Separación de responsabilidades: Lectura vs Escritura
         if self.action in ['list', 'retrieve']:
             return VentaHistoricaReadSerializer
         return VentaHistoricaWriteSerializer
 
 
+# =========================
+# REPORTE POR PAÍS
+# =========================
+
 def reporte_ventas_por_pais(request):
-    # La misma lógica que probamos en la shell
-    ventas_subquery = VentaHistorica.objects.filter(
-        distribuidor__pais=OuterRef('pk')
-    ).values('distribuidor__pais').annotate(
-        total=Sum('total_venta_usd')
-    ).values('total')
 
     paises = PaisDestino.objects.annotate(
-        total_vendido=Subquery(ventas_subquery)
-    )
+        total_vendido=Coalesce(
+            Sum('distribuidores__ventas__total_venta_usd'),
+            Value(0),
+            output_field=FloatField()
+        )
+    ).values('id', 'nombre', 'total_vendido')
 
-    return render(request, 'comercial/reporte_paises.html', {'paises': paises})        
+    return JsonResponse(list(paises), safe=False)

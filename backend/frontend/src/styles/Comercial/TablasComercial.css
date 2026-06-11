@@ -1,0 +1,95 @@
+.comercial-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+
+/* TABLA BASE */
+.comercial-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* HEADER */
+.comercial-table thead {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.comercial-table th {
+  text-align: left;
+  padding: 12px 14px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* CELDAS */
+.comercial-table td {
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* FILAS */
+.comercial-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.comercial-table tbody tr:hover {
+  background: rgba(34, 211, 238, 0.06);
+}
+
+/* ZEBRA OPCIONAL */
+.comercial-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.01);
+}
+
+/* BADGE / ESTADO (por si luego lo usas) */
+.comercial-badge {
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: rgba(34, 211, 238, 0.15);
+  color: #22d3ee;
+}
+
+/* PAGINACIÓN */
+.comercial-pagination {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+.comercial-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.comercial-btn:hover {
+  background: #334155;
+}
+
+.comercial-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.comercial-page-info {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}

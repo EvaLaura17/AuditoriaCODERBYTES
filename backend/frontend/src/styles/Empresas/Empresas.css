@@ -1,0 +1,12 @@
+.btn-restaurar {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+
+  background: #22c55e;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+}

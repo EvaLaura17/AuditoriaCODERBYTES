@@ -1,0 +1,78 @@
+.aduanas-container {
+  padding: 20px;
+  color: white;
+}
+
+.aduanas-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+/* NAV */
+.aduanas-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #2f2f2f;
+}
+
+/* LINKS */
+.aduanas-link {
+  color: #9ca3af;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.aduanas-link:hover {
+  color: #67e8f9;
+  background-color: rgba(103, 232, 249, 0.08);
+}
+
+/* ACTIVO */
+.aduanas-link.active {
+  color: #67e8f9;
+  font-weight: 600;
+  background-color: rgba(103, 232, 249, 0.15);
+}
+
+/* CONTENIDO */
+.aduanas-content {
+  margin-top: 10px;
+}
+.aduanas-table-container {
+  color: white;
+  padding: 10px;
+}
+
+.aduanas-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #374151;
+  font-size: 14px;
+}
+
+.aduanas-table thead {
+  background: #111827;
+}
+
+.aduanas-table th {
+  padding: 10px;
+  text-align: left;
+  color: #cbd5e1;
+  border-bottom: 1px solid #374151;
+}
+
+.aduanas-table td {
+  padding: 10px;
+  border-top: 1px solid #1f2937;
+}
+
+.aduanas-table tbody tr:hover {
+  background: #0f172a;
+  transition: 0.2s;
+}

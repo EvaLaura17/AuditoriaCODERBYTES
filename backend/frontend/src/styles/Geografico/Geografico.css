@@ -1,0 +1,96 @@
+.geografico-container {
+  padding: 20px;
+}
+
+.titulo-modulo {
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  background: #0f172a;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.grid-paises {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.card-pais {
+  background: #0f172a;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: white;
+}
+
+.card-pais h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.pais-form {
+  display: grid;
+  gap: 15px;
+}
+
+.pais-form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1e293b;
+  color: white;
+}
+
+.btn-guardar,
+.btn-editar,
+.btn-eliminar,
+.btn-restaurar {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-guardar {
+  background: #38bdf8;
+}
+
+.btn-editar {
+  background: #38bdf8;
+  color: black;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+}
+
+.btn-restaurar {
+  background: #22c55e;
+  color: white;
+  width: 100%;
+}
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.inactivo {
+  color: #ef4444;
+  font-weight: bold;
+}
